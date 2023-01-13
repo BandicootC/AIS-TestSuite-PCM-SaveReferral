@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="41efdd32-f85b-4cee-aa68-5919369f9f19" activeEnvironment="Default" name="ReferralAddUpdateService" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b02cbdc8-1959-48b4-aac6-5485f39f9a08" wsaVersion="200508" name="WSHttpBinding_ReferralAddUpdateService" type="wsdl" bindingName="{http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07}WSHttpBinding_ReferralAddUpdateService" soapVersion="1_2" anonymous="optional" definition="http://localhost:8080/ReferralAddUpdateService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ReferralAddUpdateService.svc?wsdl"><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ReferralAddUpdateService" targetNamespace="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ReferralAddUpdateService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ReferralAddUpdateService_SaveReferral_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy"/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd0" namespace="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd5" namespace="http://plexishealth.com/pcm/ais/services/framework/2019/07"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts.Shared"/>
+      <xsd:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ReferralAddUpdateService_GetServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersion"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_GetServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceVersionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_GetNullValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNullValues"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_GetNullValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNullValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_GetNullValues_PlexisServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:PlexisServiceFaultException" xmlns:q1="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts"/>
+  </wsdl:message>
+  <wsdl:message name="RefreshReferenceDataRequest">
+    <wsdl:part name="parameters" element="q2:RefreshReferenceDataRequest" xmlns:q2="http://plexishealth.com/pcm/ais/services/framework/2019/07"/>
+  </wsdl:message>
+  <wsdl:message name="RefreshReferenceDataResponse">
+    <wsdl:part name="parameters" element="q3:RefreshReferenceDataResponse" xmlns:q3="http://plexishealth.com/pcm/ais/services/framework/2019/07"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_RefreshReferenceData_PlexisServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:PlexisServiceFaultException" xmlns:q4="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts"/>
+  </wsdl:message>
+  <wsdl:message name="SaveReferralDataRequest">
+    <wsdl:part name="parameters" element="tns:SaveReferralDataRequest"/>
+  </wsdl:message>
+  <wsdl:message name="NestedDataResponse">
+    <wsdl:part name="parameters" element="q5:NestedDataResponse" xmlns:q5="http://plexishealth.com/pcm/ais/services/framework/2019/07"/>
+  </wsdl:message>
+  <wsdl:message name="ReferralAddUpdateService_SaveReferral_PlexisServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:PlexisServiceFaultException" xmlns:q6="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts"/>
+  </wsdl:message>
+  <wsdl:portType name="ReferralAddUpdateService">
+    <wsdl:operation name="GetServiceVersion">
+      <wsdl:input wsaw:Action="GetServiceVersion" message="tns:ReferralAddUpdateService_GetServiceVersion_InputMessage"/>
+      <wsdl:output wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/GetServiceVersionResponse" message="tns:ReferralAddUpdateService_GetServiceVersion_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetNullValues">
+      <wsdl:input wsaw:Action="GetNullValues" message="tns:ReferralAddUpdateService_GetNullValues_InputMessage"/>
+      <wsdl:output wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/GetNullValuesResponse" message="tns:ReferralAddUpdateService_GetNullValues_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/GetNullValuesPlexisServiceFaultExceptionFault" name="PlexisServiceFaultExceptionFault" message="tns:ReferralAddUpdateService_GetNullValues_PlexisServiceFaultExceptionFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshReferenceData">
+      <wsdl:input wsaw:Action="RefreshReferenceData" name="RefreshReferenceDataRequest" message="tns:RefreshReferenceDataRequest"/>
+      <wsdl:output wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/RefreshReferenceDataResponse" name="RefreshReferenceDataResponse" message="tns:RefreshReferenceDataResponse"/>
+      <wsdl:fault wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/RefreshReferenceDataPlexisServiceFaultExceptionFault" name="PlexisServiceFaultExceptionFault" message="tns:ReferralAddUpdateService_RefreshReferenceData_PlexisServiceFaultExceptionFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReferral">
+      <wsdl:input wsaw:Action="SaveReferral" name="SaveReferralDataRequest" message="tns:SaveReferralDataRequest"/>
+      <wsdl:output wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/SaveReferralResponse" name="NestedDataResponse" message="tns:NestedDataResponse"/>
+      <wsdl:fault wsaw:Action="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07/ReferralAddUpdateService/SaveReferralPlexisServiceFaultExceptionFault" name="PlexisServiceFaultExceptionFault" message="tns:ReferralAddUpdateService_SaveReferral_PlexisServiceFaultExceptionFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ReferralAddUpdateService" type="tns:ReferralAddUpdateService">
+    <wsp:PolicyReference URI="#WSHttpBinding_ReferralAddUpdateService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetServiceVersion">
+      <soap12:operation soapAction="GetServiceVersion" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNullValues">
+      <soap12:operation soapAction="GetNullValues" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PlexisServiceFaultExceptionFault">
+        <soap12:fault name="PlexisServiceFaultExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshReferenceData">
+      <soap12:operation soapAction="RefreshReferenceData" style="document"/>
+      <wsdl:input name="RefreshReferenceDataRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RefreshReferenceDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PlexisServiceFaultExceptionFault">
+        <soap12:fault name="PlexisServiceFaultExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReferral">
+      <wsp:PolicyReference URI="#WSHttpBinding_ReferralAddUpdateService_SaveReferral_policy"/>
+      <soap12:operation soapAction="SaveReferral" style="document"/>
+      <wsdl:input name="SaveReferralDataRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="NestedDataResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PlexisServiceFaultExceptionFault">
+        <soap12:fault name="PlexisServiceFaultExceptionFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReferralAddUpdateService">
+    <wsdl:port name="WSHttpBinding_ReferralAddUpdateService" binding="tns:WSHttpBinding_ReferralAddUpdateService">
+      <soap12:address location="http://localhost:8080/ReferralAddUpdateService.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8080/ReferralAddUpdateService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts.Shared"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+  <xs:element name="GetServiceVersion">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServiceVersionResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNullValues">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNullValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNullValuesResult" nillable="true" type="q1:NullValues" xmlns:q1="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveReferralDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Data" nillable="true" type="q2:ReferralData" xmlns:q2="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+        <xs:element minOccurs="0" name="Metadata" nillable="true" type="q3:RequestMetadata" xmlns:q3="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ReferralData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Referral" nillable="true" type="q4:Referral" xmlns:q4="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+      <xs:element minOccurs="0" name="ReferralReferredToProviders" nillable="true" type="q5:ArrayOfReferralReferredToProvider" xmlns:q5="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+      <xs:element minOccurs="0" name="ReferralAuthorizedProcedures" nillable="true" type="q6:ArrayOfReferralAuthorizedProcedure" xmlns:q6="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+      <xs:element minOccurs="0" name="ReferralApprovals" nillable="true" type="q7:ArrayOfReferralApproval" xmlns:q7="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralData" nillable="true" type="q8:ReferralData" xmlns:q8="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="Referral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionType" type="q9:ActionType" xmlns:q9="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xs:element minOccurs="0" name="ReferralId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ReferralUd" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReferralStatusId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ReferralUrgencyId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ReferralCategoryId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ReferralTypeId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="EligibilityId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ReferringProviderId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="EffectiveFrom" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="EffectiveThrough" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="DateReceived" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="PrimaryDiagnosisCodeUd" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SecondaryDiagnosisCodeUd" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdmitPrimaryDiagnosisCodeUd" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MaximumDollar" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="MaximumVisitsBedDays" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ExpectedAdmitDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ActualAdmitDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="DischargeDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="FacilityId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="IsNewborn" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsCatastrophic" nillable="true" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ApprovedStatusDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Symptoms" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ObjectRowVersion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Referral" nillable="true" type="q10:Referral" xmlns:q10="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ArrayOfReferralReferredToProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferralReferredToProvider" nillable="true" type="q11:ReferralReferredToProvider" xmlns:q11="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferralReferredToProvider" nillable="true" type="q12:ArrayOfReferralReferredToProvider" xmlns:q12="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ReferralReferredToProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionType" type="q13:ActionType" xmlns:q13="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xs:element minOccurs="0" name="ReferralReferredToProviderId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RecordType" nillable="true" type="q14:ReferredToProviderRecordType" xmlns:q14="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts.Shared"/>
+      <xs:element minOccurs="0" name="ProviderId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ProviderIdMapId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="MedicalGroupId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ProviderOrMedicalGroupSpecialtyId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="InvolvementId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralReferredToProvider" nillable="true" type="q15:ReferralReferredToProvider" xmlns:q15="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ArrayOfReferralAuthorizedProcedure">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferralAuthorizedProcedure" nillable="true" type="q16:ReferralAuthorizedProcedure" xmlns:q16="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferralAuthorizedProcedure" nillable="true" type="q17:ArrayOfReferralAuthorizedProcedure" xmlns:q17="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ReferralAuthorizedProcedure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionType" type="q18:ActionType" xmlns:q18="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xs:element minOccurs="0" name="ReferralAuthorizedProcedureId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ProcedureCodeUd" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Modifiers" nillable="true" type="q19:ArrayOfstring" xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element minOccurs="0" name="PlaceOfServiceId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="TypeOfServiceId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="RequestedQuantity" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ApprovedQuantity" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="EffectiveFrom" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="EffectiveThrough" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ObjectRowVersion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralAuthorizedProcedure" nillable="true" type="q20:ReferralAuthorizedProcedure" xmlns:q20="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ArrayOfReferralApproval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferralApproval" nillable="true" type="q21:ReferralApproval" xmlns:q21="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferralApproval" nillable="true" type="q22:ArrayOfReferralApproval" xmlns:q22="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+  <xs:complexType name="ReferralApproval">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionType" type="q23:ActionType" xmlns:q23="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xs:element minOccurs="0" name="ReferralApprovalId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ApprovingBodyId" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ApprovalDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ObjectRowVersion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferralApproval" nillable="true" type="q24:ReferralApproval" xmlns:q24="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core">
+  <xs:complexType name="NullValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NullDateTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="NullIdentifier" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NullInternalId" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NullValues" nillable="true" type="tns:NullValues"/>
+  <xs:simpleType name="ActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="ADD"/>
+      <xs:enumeration value="UPDATE"/>
+      <xs:enumeration value="DELETE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionType" nillable="true" type="tns:ActionType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd6</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts.Shared" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts.Shared">
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:simpleType name="ReferredToProviderRecordType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Provider">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MedicalGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReferredToProviderRecordType" nillable="true" type="tns:ReferredToProviderRecordType"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd7</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+  <xs:complexType name="RequestMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SecurityAction" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClientTransactionId" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestMetadata" nillable="true" type="tns:RequestMetadata"/>
+  <xs:complexType name="ArrayOfValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationError" nillable="true" type="tns:ValidationError"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationError" nillable="true" type="tns:ArrayOfValidationError"/>
+  <xs:complexType name="ValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ParentRecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ImpactedProperties" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalMessages" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationError" nillable="true" type="tns:ValidationError"/>
+  <xs:complexType name="ResponseMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientTransactionId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ServerTransactionId" type="ser:guid"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseMetadata" nillable="true" type="tns:ResponseMetadata"/>
+  <xs:complexType name="ArrayOfNestedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NestedResult" nillable="true" type="tns:NestedResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNestedResult" nillable="true" type="tns:ArrayOfNestedResult"/>
+  <xs:complexType name="NestedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ParentRecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryKeyPropertyName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaryKey" type="xs:int"/>
+      <xs:element minOccurs="0" name="ActionType" nillable="true" type="q2:ActionType" xmlns:q2="http://schemas.datacontract.org/2004/07/Plexis.PCM.Domain.Core"/>
+      <xs:element minOccurs="0" name="ActionResult" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfValidationError"/>
+      <xs:element minOccurs="0" name="PrimaryKeyGuid" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ProcessInfoMessages" nillable="true" type="tns:ArrayOfProcessInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NestedResult" nillable="true" type="tns:NestedResult"/>
+  <xs:complexType name="ArrayOfProcessInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessInfo" nillable="true" type="tns:ProcessInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcessInfo" nillable="true" type="tns:ArrayOfProcessInfo"/>
+  <xs:complexType name="ProcessInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ImpactedProperties" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessInfo" nillable="true" type="tns:ProcessInfo"/>
+  <xs:complexType name="NestedIdentifierResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NestedResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentifierPropertyName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NestedIdentifierResult" nillable="true" type="tns:NestedIdentifierResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.FaultContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+  <xs:complexType name="PlexisServiceFaultException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServerTransactionId" nillable="true" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ClientTransactionId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfValidationError"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlexisServiceFaultException" nillable="true" type="tns:PlexisServiceFaultException"/>
+  <xs:complexType name="ArrayOfValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationError" nillable="true" type="tns:ValidationError"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationError" nillable="true" type="tns:ArrayOfValidationError"/>
+  <xs:complexType name="ValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="ParentRecordId" type="ser:guid"/>
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ImpactedProperties" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalMessages" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationError" nillable="true" type="tns:ValidationError"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://plexishealth.com/pcm/ais/services/framework/2019/07" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://plexishealth.com/pcm/ais/services/framework/2019/07">
+  <xs:import schemaLocation="http://localhost:8080/ReferralAddUpdateService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+  <xs:element name="RefreshReferenceDataRequest">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefreshReferenceDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NestedDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataRequestErrors" nillable="true" type="q1:ArrayOfValidationError" xmlns:q1="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+        <xs:element minOccurs="0" name="IsValid" type="xs:boolean"/>
+        <xs:element minOccurs="0" name="Metadata" nillable="true" type="q2:ResponseMetadata" xmlns:q2="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+        <xs:element minOccurs="0" name="Result" nillable="true" type="q3:ArrayOfNestedResult" xmlns:q3="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ReferralAddUpdateService.svc</con:endpoint></con:endpoints><con:operation id="fe64b9a4-e140-48a9-bf3c-f34185262350" isOneWay="false" action="GetNullValues" name="GetNullValues" bindingOperationName="GetNullValues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f2af842-d8a3-4fcf-9ce6-663e4be69b46" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ReferralAddUpdateService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ns:GetNullValues/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetNullValues"/></con:call></con:operation><con:operation id="0a831bc7-0b37-4f0a-be0a-d1a2fa91d91d" isOneWay="false" action="GetServiceVersion" name="GetServiceVersion" bindingOperationName="GetServiceVersion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f3756043-b8b1-46b1-bbd2-49b26ee4920f" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ReferralAddUpdateService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ns:GetServiceVersion/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetServiceVersion"/></con:call></con:operation><con:operation id="bce92357-6d44-4946-a816-7f14aeb2980c" isOneWay="false" action="RefreshReferenceData" name="RefreshReferenceData" bindingOperationName="RefreshReferenceData" type="Request-Response" outputName="RefreshReferenceDataResponse" inputName="RefreshReferenceDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e8b9a61-7dbe-42e9-b369-cf36d7421119" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ReferralAddUpdateService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://plexishealth.com/pcm/ais/services/framework/2019/07">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ns:RefreshReferenceDataRequest/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="RefreshReferenceData"/></con:call></con:operation><con:operation id="b432a905-120c-4c83-92fb-88561e1842ee" isOneWay="false" action="SaveReferral" name="SaveReferral" bindingOperationName="SaveReferral" type="Request-Response" outputName="NestedDataResponse" inputName="SaveReferralDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1aa8aed-1757-49a2-87b0-7178405d7300" name="SimpleReferral" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ReferralAddUpdateService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="http://plexishealth.com/pcm/ais/services/referral/addupdate/2019/07" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:plex="http://schemas.datacontract.org/2004/07/Plexis.PCM.AIS.ServiceInterface.Core.DataContracts">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ns:SaveReferralDataRequest>\r
+         <!--Optional:-->\r
+         <ns:Data>\r
+            <!--Optional:-->\r
+            <ns:Referral>\r
+               <!--Optional:-->\r
+               <ns:ActionType>ADD</ns:ActionType>\r
+               <!--Optional:-->\r
+               <ns:ReferralId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralId>\r
+               <!--Optional:-->\r
+               <ns:ReferralUd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralUd>\r
+               <!--Optional:-->\r
+               <ns:ReferralStatusId>2</ns:ReferralStatusId>\r
+               <!--Optional:-->\r
+               <ns:ReferralUrgencyId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralUrgencyId>\r
+               <!--Optional:-->\r
+               <ns:ReferralCategoryId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralCategoryId>\r
+               <!--Optional:-->\r
+               <ns:ReferralTypeId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralTypeId>\r
+               <!--Optional:-->\r
+               <ns:EligibilityId>18</ns:EligibilityId>\r
+               <!--Optional:-->\r
+               <ns:ReferringProviderId>36</ns:ReferringProviderId>\r
+               <!--Optional:-->\r
+               <ns:EffectiveFrom>2022-01-06</ns:EffectiveFrom>\r
+               <!--Optional:-->\r
+               <ns:EffectiveThrough>2022-03-07</ns:EffectiveThrough>\r
+               <!--Optional:-->\r
+               <ns:DateReceived xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:DateReceived>\r
+               <!--Optional:-->\r
+               <ns:PrimaryDiagnosisCodeUd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:PrimaryDiagnosisCodeUd>\r
+               <!--Optional:-->\r
+               <ns:SecondaryDiagnosisCodeUd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:SecondaryDiagnosisCodeUd>\r
+               <!--Optional:-->\r
+               <ns:AdmitPrimaryDiagnosisCodeUd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:AdmitPrimaryDiagnosisCodeUd>\r
+               <!--Optional:-->\r
+               <ns:MaximumDollar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:MaximumDollar>\r
+               <!--Optional:-->\r
+               <ns:MaximumVisitsBedDays xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:MaximumVisitsBedDays>\r
+               <!--Optional:-->\r
+               <ns:ExpectedAdmitDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ExpectedAdmitDate>\r
+               <!--Optional:-->\r
+               <ns:ActualAdmitDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ActualAdmitDate>\r
+               <!--Optional:-->\r
+               <ns:DischargeDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:DischargeDate>\r
+               <!--Optional:-->\r
+               <ns:FacilityId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:FacilityId>\r
+               <!--Optional:-->\r
+               <ns:IsNewborn xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:IsNewborn>\r
+               <!--Optional:-->\r
+               <ns:IsCatastrophic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:IsCatastrophic>\r
+               <!--Optional:-->\r
+               <ns:ApprovedStatusDate>2022-04-12</ns:ApprovedStatusDate>\r
+               <!--Optional:-->\r
+               <ns:Symptoms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:Symptoms>\r
+               <!--Optional:-->\r
+               <ns:Comments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true">?</ns:Comments>\r
+               <!--Optional:-->\r
+               <ns:ObjectRowVersion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ObjectRowVersion>\r
+               <!--Optional:-->\r
+               <!--<ns:RecordId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:RecordId>\r-->
+            </ns:Referral>\r
+            <!--Optional:-->\r
+            <ns:ReferralReferredToProviders>\r
+               <!--Zero or more repetitions:-->\r
+               <ns:ReferralReferredToProvider>\r
+                  <!--Optional:-->\r
+                  <ns:ActionType>ADD</ns:ActionType>\r
+                  <!--Optional:-->\r
+                  <ns:ReferralReferredToProviderId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ReferralReferredToProviderId>\r
+                  <!--Optional:-->\r
+                  <ns:RecordType>Provider</ns:RecordType>\r
+                  <!--Optional:-->\r
+                  <ns:ProviderId>39</ns:ProviderId>\r
+                  <!--Optional:-->\r
+                  <ns:ProviderIdMapId>47</ns:ProviderIdMapId>\r
+                  <!--Optional:-->\r
+                  <ns:MedicalGroupId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:MedicalGroupId>\r
+                  <!--Optional:-->\r
+                  <ns:ProviderOrMedicalGroupSpecialtyId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:ProviderOrMedicalGroupSpecialtyId>\r
+                  <!--Optional:-->\r
+                  <ns:InvolvementId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:InvolvementId>\r
+                  <!--Optional:-->\r
+                  <!--<ns:RecordId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"></ns:RecordId>\r-->
+               </ns:ReferralReferredToProvider>\r
+            </ns:ReferralReferredToProviders>\r
+            
+            
+         </ns:Data>\r
+         <!--Optional:-->\r
+         <ns:Metadata>\r
+            <!--Optional:-->\r
+            <plex:UserId>asdfasd</plex:UserId>\r
+            <!--Optional:-->\r
+            <plex:SecurityAction>fadssd</plex:SecurityAction>\r
+            <!--Optional:-->\r
+            <plex:ClientTransactionId>dsafd</plex:ClientTransactionId>\r
+         </ns:Metadata>\r
+      </ns:SaveReferralDataRequest>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="SaveReferral"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
